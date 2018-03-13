@@ -35,12 +35,13 @@ module Charcoal {
       return 0;
     }
 
-    proc assertIntEquals(msg: string, expected: ?, actual: ?) : TestResult {
-      var b:bool = actual == expected;
+    proc assertIntEquals(msg: string, expected: int, actual: int) : TestResult {
+      var b: bool = false;
+      if actual == expected then b = true;
       return new TestIntResult(msg=msg, passed=b, expected, actual);
     }
 
-    proc assertRealEquals(msg: string, expected: ?, actual: ?) : TestResult {
+    proc assertRealEquals(msg: string, expected: real, actual: real) : TestResult {
       var b:bool = actual == expected;
       return new TestRealResult(msg=msg, passed=b, expected, actual);
     }
@@ -55,17 +56,14 @@ module Charcoal {
   }
 
   class TestResult {
-      var passed: bool = false,
-          msg: string;
+      var msg: string,
+          passed: bool = false;
 
-      proc init() {
-        super.init();
-        this.initDone();
-      }
+      proc init() { }
 
       proc init(msg: string, passed:bool) {
-        super.init();
-        this.initDone();
+        this.msg = msg;
+        this.passed=passed;
       }
 
       proc report() : string {
@@ -73,7 +71,7 @@ module Charcoal {
       }
 
       proc writeThis() {
-          var m: string = "\t** TEST: " + this.passed + " ... " + this.msg;
+          var m: string = this.passed + " ... " + this.msg;
           return m;
       }
   }
@@ -82,10 +80,8 @@ module Charcoal {
     var err: Error;
 
     proc init(msg: string, passed:bool, err:Error){
-      super.init();
+      super.init(msg=msg, passed=passed);
       this.initDone();
-      this.msg = msg;
-      this.err = err;
     }
 
     proc report() {
@@ -93,7 +89,7 @@ module Charcoal {
     }
 
     proc writeThis() {
-      var m = super.writeThis();
+      var m = "\t ** TEST (AssertThrowsError) " + super.writeThis();
       //m += this.err.message();
       return m;
     }
@@ -104,10 +100,8 @@ module Charcoal {
           actual: int;
 
       proc init(msg: string, passed: bool, expected: int, actual: int) {
-        super.init();
+        super.init(msg=msg, passed=passed);
         this.initDone();
-        this.msg = msg;
-        this.passed = passed;
         this.expected = expected;
         this.actual = actual;
       }
@@ -117,8 +111,8 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = super.writeThis();
-        m += "\n\t\texpected: " + this.expected + "\n\t\tactual: " + this.actual;
+        var m: string = "\t ** TEST (AssertIntEquals) " + super.writeThis();
+        m += " - expected: " + this.expected + " <-> " + this.actual + " actual: ";
         return m;
       }
   }
@@ -128,10 +122,8 @@ module Charcoal {
           actual: real;
 
       proc init(msg: string, passed: bool, expected: real, actual: real) {
-        super.init();
+        super.init(msg=msg, passed=passed);
         this.initDone();
-        this.msg = msg;
-        this.passed = passed;
         this.expected = expected;
         this.actual = actual;
       }
@@ -141,8 +133,8 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = super.writeThis();
-        m += "\n\t\texpected: " + this.expected + "\n\t\tactual: " + this.actual;
+        var m: string = "\t ** TEST (AssertRealEquals) " + super.writeThis();
+        m += " - expected: " + this.expected + " <-> " + this.actual + " actual";
         return m;
       }
   }
@@ -152,10 +144,8 @@ module Charcoal {
         actual: [1..0] real;
 
     proc init(msg: string, passed: bool, expected: [] real, actual: [] real) {
-      super.init();
+      super.init(msg=msg, passed=passed);
       this.initDone();
-      this.msg = msg;
-      this.passed=passed;
       for e in expected {
         this.expected.push_back(e);
       }
@@ -170,7 +160,9 @@ module Charcoal {
     }
 
     proc writeThis(): string {
-      return this.msg;
+      var m: string = "\t ** TEST (AssertArrayEquals) " + super.writeThis();
+      msg += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
+      return m;
     }
   }
 }
