@@ -19,16 +19,6 @@ module Charcoal {
 
     proc report() {
       for r in this.results {
-        /*
-        //writeln(" ** TEST: ", r.passed , " ... ", r.msg);
-        var m: string = " ** TEST: " + r.passed + " ... " + r.msg;
-        writeln("r.type: ", r.type:string);
-        if hasField(r.type, "expected") {
-          writeln("EXPECTED!! ", r.expected);
-        }
-        //writeln(" ** TEST: ", r.passed , " ... ", r.msg, " expected: ", r.expected);
-        writeln(m);
-        */
         writeln(r.report());
         if r.passed {
           this.s += 1;
@@ -58,6 +48,10 @@ module Charcoal {
     proc assertArrayEquals(msg: string, expected: []?, actual: []?) : TestResult {
       return new TestArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
     }
+
+    proc assertThrowsError(msg: string, passed: bool = false, err: Error ) : TestResult {
+      return new TestErrorResult(msg=msg, passed=passed, err=err);
+    }
   }
 
   class TestResult {
@@ -75,9 +69,34 @@ module Charcoal {
       }
 
       proc report() : string {
+          return this.writeThis();
+      }
+
+      proc writeThis() {
           var m: string = "\t** TEST: " + this.passed + " ... " + this.msg;
           return m;
       }
+  }
+
+  class TestErrorResult : TestResult {
+    var err: Error;
+
+    proc init(msg: string, passed:bool, err:Error){
+      super.init();
+      this.initDone();
+      this.msg = msg;
+      this.err = err;
+    }
+
+    proc report() {
+      return this.writeThis();
+    }
+
+    proc writeThis() {
+      var m = super.writeThis();
+      //m += this.err.message();
+      return m;
+    }
   }
 
   class TestIntResult : TestResult {
@@ -93,13 +112,14 @@ module Charcoal {
         this.actual = actual;
       }
 
-      proc report(): string
-       {
-          var m: string = super.report();
-          if !this.passed {
-            m += "\n\t\texpected: " + this.expected + "\n\t\tactual: " + this.actual;
-          }
-          return m;
+      proc report(): string {
+          return this.writeThis();
+      }
+
+      proc writeThis(): string {
+        var m: string = super.writeThis();
+        m += "\n\t\texpected: " + this.expected + "\n\t\tactual: " + this.actual;
+        return m;
       }
   }
 
@@ -116,13 +136,14 @@ module Charcoal {
         this.actual = actual;
       }
 
-      proc report(): string
-       {
-          var m: string = super.report();
-          if !this.passed {
-            m += "\n\t\texpected: " + this.expected + "\n\t\tactual: " + this.actual;
-          }
-          return m;
+      proc report(): string {
+        return this.writeThis();
+      }
+
+      proc writeThis(): string {
+        var m: string = super.writeThis();
+        m += "\n\t\texpected: " + this.expected + "\n\t\tactual: " + this.actual;
+        return m;
       }
   }
 
@@ -138,9 +159,18 @@ module Charcoal {
       for e in expected {
         this.expected.push_back(e);
       }
-      //this.expected = for e in expected do e;
-      //this.actual = for a in actual do a;
+      for a in actual {
+        this.actual.push_back(a);
+      }
+
     }
 
+    proc report() {
+      return this.writeThis();
+    }
+
+    proc writeThis(): string {
+      return this.msg;
+    }
   }
 }
