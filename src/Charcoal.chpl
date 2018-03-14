@@ -76,6 +76,12 @@ module Charcoal {
       this.results.push_back(r);
       return r;
     }
+
+    proc assertBoolEquals(msg: string, expected: bool, actual: bool) {
+      const r = new TestBoolResult(msg=msg, passed=(expected==actual), expected=expected, actual=actual);
+      this.results.push_back(r);
+      return r;
+    }
   }
 
   class TestResult {
@@ -139,6 +145,29 @@ module Charcoal {
         return m;
       }
   }
+
+  class TestBoolResult : TestResult {
+      var expected: bool,
+          actual: bool;
+
+      proc init(msg: string, passed: bool, expected: bool, actual: bool) {
+        super.init(msg=msg, passed=passed);
+        this.initDone();
+        this.expected = expected;
+        this.actual = actual;
+      }
+
+      proc report(): string {
+        return this.writeThis();
+      }
+
+      proc writeThis(): string {
+        var m: string = "\t ** TEST (AssertRealEquals) " + super.writeThis();
+        m += " - expected: " + this.expected + " <-> " + this.actual + " actual";
+        return m;
+      }
+  }
+
 
   class TestRealResult : TestResult {
       var expected: real,
