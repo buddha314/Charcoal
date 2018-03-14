@@ -82,6 +82,18 @@ module Charcoal {
       this.results.push_back(r);
       return r;
     }
+
+    proc assertStringEquals(msg: string, expected: string, actual: string) {
+      const r = new TestStringResult(msg=msg,passed=(expected==actual),expected=expected, actual=actual);
+      this.results.push_back(r);
+      return r;
+    }
+
+    proc assertStringArrayEquals(msg: string, expected: [] string, actual: [] string) : TestResult {
+      const r = new TestStringArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
+      this.results.push_back(r);
+      return r;
+    }
   }
 
   class TestResult {
@@ -244,6 +256,29 @@ module Charcoal {
     }
   }
 
+
+  class TestStringResult : TestResult {
+      var expected: string,
+          actual: string;
+
+      proc init(msg: string, passed:bool, expected: string, actual: string) {
+        super.init(msg=msg, passed=passed);
+        this.initDone();
+        this.expected = expected;
+        this.actual = actual;
+      }
+
+      proc report(): string {
+          return this.writeThis();
+      }
+
+      proc writeThis(): string {
+        var m: string = "\t ** TEST (AssertIntEquals) " + super.writeThis();
+        m += " - expected: " + this.expected + " <-> " + this.actual + " actual: ";
+        return m;
+      }
+  }
+
   class TestIntArrayResult : TestResult {
     var expected: [1..0] int,
         actual: [1..0] int;
@@ -270,4 +305,32 @@ module Charcoal {
       return m;
     }
   }
+
+
+    class TestStringArrayResult : TestResult {
+      var expected: [1..0] string,
+          actual: [1..0] string;
+
+      proc init(msg: string, passed: bool, expected: [] string, actual: [] string) {
+        super.init(msg=msg, passed=passed);
+        this.initDone();
+        for e in expected {
+          this.expected.push_back(e);
+        }
+        for a in actual {
+          this.actual.push_back(a);
+        }
+
+      }
+
+      proc report() {
+        return this.writeThis();
+      }
+
+      proc writeThis(): string {
+        var m: string = "\t ** TEST (AssertArrayEquals) " + super.writeThis();
+        msg += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
+        return m;
+      }
+    }
 }
