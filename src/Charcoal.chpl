@@ -38,24 +38,43 @@ module Charcoal {
     proc assertIntEquals(msg: string, expected: int, actual: int) : TestResult {
       var b: bool = false;
       if actual == expected then b = true;
-      return new TestIntResult(msg=msg, passed=b, expected, actual);
+      const r = new TestIntResult(msg=msg, passed=b, expected, actual);
+      this.results.push_back(r);
+      return r;
     }
 
     proc assertRealEquals(msg: string, expected: real, actual: real) : TestResult {
       var b:bool = actual == expected;
-      return new TestRealResult(msg=msg, passed=b, expected, actual);
+      const r = new TestRealResult(msg=msg, passed=b, expected=expected, actual=actual);
+      this.results.push_back(r);
+      return r;
+    }
+
+    proc assertRealApproximates(msg: string, expected: real, actual: real) : TestResult {
+      var d = abs(expected - actual);
+      var b:bool = (d < 1.0e-5);
+      const r = new TestRealApproximatesResult(msg=msg, passed=b, expected=expected
+        , actual=actual, delta=d);
+      this.results.push_back(r);
+      return r;
     }
 
     proc assertArrayEquals(msg: string, expected: []?, actual: []?) : TestResult {
-      return new TestArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
+      const r = new TestArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
+      this.results.push_back(r);
+      return r;
     }
 
     proc assertIntArrayEquals(msg: string, expected: [] int, actual: [] int) : TestResult {
-      return new TestIntArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
+      const r = new TestIntArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
+      this.results.push_back(r);
+      return r;
     }
 
     proc assertThrowsError(msg: string, passed: bool = false, err: Error ) : TestResult {
-      return new TestErrorResult(msg=msg, passed=passed, err=err);
+      const r = new TestErrorResult(msg=msg, passed=passed, err=err);
+      this.results.push_back(r);
+      return r;
     }
   }
 
@@ -142,6 +161,32 @@ module Charcoal {
         return m;
       }
   }
+
+  class TestRealApproximatesResult : TestResult {
+      var expected: real,
+          actual: real,
+          delta: real;
+
+      proc init(msg: string, passed: bool, expected: real, actual: real, delta:real) {
+        super.init(msg=msg, passed=passed);
+        this.initDone();
+        this.expected = expected;
+        this.actual = actual;
+        this.delta=delta;
+      }
+
+      proc report(): string {
+        return this.writeThis();
+      }
+
+      proc writeThis(): string {
+        var m: string = "\t ** TEST (AssertRealApproximates) " + super.writeThis();
+        m += " - expected: " + this.expected + " <-> " + this.actual + " actual";
+        m += " delta: " + this.delta;
+        return m;
+      }
+  }
+
 
   class TestArrayResult : TestResult {
     var expected: [1..0] real,
