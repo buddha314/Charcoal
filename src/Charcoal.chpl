@@ -50,6 +50,10 @@ module Charcoal {
       return new TestArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
     }
 
+    proc assertIntArrayEquals(msg: string, expected: [] int, actual: [] int) : TestResult {
+      return new TestIntArrayResult(msg=msg, passed=actual.equals(expected), expected, actual);
+    }
+
     proc assertThrowsError(msg: string, passed: bool = false, err: Error ) : TestResult {
       return new TestErrorResult(msg=msg, passed=passed, err=err);
     }
@@ -144,6 +148,33 @@ module Charcoal {
         actual: [1..0] real;
 
     proc init(msg: string, passed: bool, expected: [] real, actual: [] real) {
+      super.init(msg=msg, passed=passed);
+      this.initDone();
+      for e in expected {
+        this.expected.push_back(e);
+      }
+      for a in actual {
+        this.actual.push_back(a);
+      }
+
+    }
+
+    proc report() {
+      return this.writeThis();
+    }
+
+    proc writeThis(): string {
+      var m: string = "\t ** TEST (AssertArrayEquals) " + super.writeThis();
+      msg += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
+      return m;
+    }
+  }
+
+  class TestIntArrayResult : TestResult {
+    var expected: [1..0] int,
+        actual: [1..0] int;
+
+    proc init(msg: string, passed: bool, expected: [] int, actual: [] int) {
       super.init(msg=msg, passed=passed);
       this.initDone();
       for e in expected {
