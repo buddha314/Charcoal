@@ -29,6 +29,7 @@ module Charcoal {
         } else {
           this.f += 1;
         }
+        this.t += 1;
       }
       writeln(" ** Passing: ", this.s, "\tFailing: ", f);
     }
@@ -116,8 +117,10 @@ module Charcoal {
       }
 
       proc writeThis() {
-          var m: string = this.passed + " ... " + this.msg;
-          return m;
+        var t: string = "FAILED ";
+        if this.passed then t= "PASSED ";
+        var m: string = " ** " + t + " ... " + this.msg;
+        return m;
       }
   }
 
@@ -134,8 +137,8 @@ module Charcoal {
     }
 
     proc writeThis() {
-      var m = "\t ** TEST (AssertThrowsError) " + super.writeThis();
-      //m += this.err.message();
+      //var m = "\t ** %s TEST (AssertThrowsError) " + super.writeThis();
+      var m = super.writeThis() + " (AssertThrowsError) ";
       return m;
     }
   }
@@ -156,7 +159,7 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = "\t ** TEST (AssertIntEquals) " + super.writeThis();
+        var m: string = super.writeThis() + " (AssertIntEqual)";
         m += " - expected: " + this.expected + " <-> " + this.actual + " actual: ";
         return m;
       }
@@ -178,7 +181,7 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = "\t ** TEST (AssertRealEquals) " + super.writeThis();
+        var m: string = super.writeThis() + " (AssertBoolEqual)";
         m += " - expected: " + this.expected + " <-> " + this.actual + " actual";
         return m;
       }
@@ -201,7 +204,7 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = "\t ** TEST (AssertRealEquals) " + super.writeThis();
+        var m: string = super.writeThis() + " (AssertRealEquals)";
         m += " - expected: " + this.expected + " <-> " + this.actual + " actual";
         return m;
       }
@@ -225,7 +228,8 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = "\t ** TEST (AssertRealApproximates) " + super.writeThis();
+        var m: string = super.writeThis() + " (AssertRealApproximates)";
+        //var m: string = "\t ** TEST (AssertRealApproximates) " + super.writeThis();
         m += " - expected: " + this.expected + " <-> " + this.actual + " actual";
         m += " delta: " + this.delta;
         return m;
@@ -254,8 +258,8 @@ module Charcoal {
     }
 
     proc writeThis(): string {
-      var m: string = "\t ** TEST (AssertArrayEquals) " + super.writeThis();
-      msg += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
+      var m: string = super.writeThis() + " (AssertArrayEquals) ";
+      m += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
       return m;
     }
   }
@@ -277,7 +281,7 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = "\t ** TEST (AssertIntEquals) " + super.writeThis();
+        var m: string = super.writeThis() + " (AssertIntEquals) ";
         m += " - expected: " + this.expected + " <-> " + this.actual + " actual: ";
         return m;
       }
@@ -304,7 +308,7 @@ module Charcoal {
     }
 
     proc writeThis(): string {
-      var m: string = "\t ** TEST (AssertArrayEquals) " + super.writeThis();
+      var m: string = super.writeThis() + " (AssertIntArrayEquals) ";
       msg += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
       return m;
     }
@@ -332,7 +336,7 @@ module Charcoal {
       }
 
       proc writeThis(): string {
-        var m: string = "\t ** TEST (AssertArrayEquals) " + super.writeThis();
+        var m: string = super.writeThis() + " (AssertStringArrayEquals) ";
         msg += " Expected: " + this.expected:string + " Actual: " + this.actual:string;
         return m;
       }
