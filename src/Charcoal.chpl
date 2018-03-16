@@ -7,19 +7,23 @@ module Charcoal {
     var s: int,   // Number of passing tests
         f: int,   // Number of failing tests
         t: int,   // Number of tests total
+        verbose: bool = false,
         results: [1..0] TestResult;
 
     proc setUp() {}
     proc tearDown() {}
 
-    proc init() {
+    proc init(verbose:bool=false) {
       this.s = 0;
       this.f = 0;
+      this.verbose=verbose;
     }
 
     proc report() {
       for r in this.results {
-        writeln(r.report());
+        if this.verbose || !r.passed {
+          writeln(r.report());
+        }
         if r.passed {
           this.s += 1;
         } else {
