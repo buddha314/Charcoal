@@ -129,7 +129,7 @@ module Charcoal {
 
     proc init(msg: string, passed:bool, err:Error){
       super.init(msg=msg, passed=passed);
-      this.initDone();
+      this.complete();
     }
 
     proc report() {
@@ -149,7 +149,7 @@ module Charcoal {
 
       proc init(msg: string, passed: bool, expected: int, actual: int) {
         super.init(msg=msg, passed=passed);
-        this.initDone();
+        this.complete();
         this.expected = expected;
         this.actual = actual;
       }
@@ -171,7 +171,7 @@ module Charcoal {
 
       proc init(msg: string, passed: bool, expected: bool, actual: bool) {
         super.init(msg=msg, passed=passed);
-        this.initDone();
+        this.complete();
         this.expected = expected;
         this.actual = actual;
       }
@@ -194,7 +194,7 @@ module Charcoal {
 
       proc init(msg: string, passed: bool, expected: real, actual: real) {
         super.init(msg=msg, passed=passed);
-        this.initDone();
+        this.complete();
         this.expected = expected;
         this.actual = actual;
       }
@@ -217,7 +217,7 @@ module Charcoal {
 
       proc init(msg: string, passed: bool, expected: real, actual: real, delta:real) {
         super.init(msg=msg, passed=passed);
-        this.initDone();
+        this.complete();
         this.expected = expected;
         this.actual = actual;
         this.delta=delta;
@@ -243,7 +243,7 @@ module Charcoal {
 
     proc init(msg: string, passed: bool, expected: [] real, actual: [] real) {
       super.init(msg=msg, passed=passed);
-      this.initDone();
+      this.complete();
       for e in expected {
         this.expected.push_back(e);
       }
@@ -271,7 +271,7 @@ module Charcoal {
 
       proc init(msg: string, passed:bool, expected: string, actual: string) {
         super.init(msg=msg, passed=passed);
-        this.initDone();
+        this.complete();
         this.expected = expected;
         this.actual = actual;
       }
@@ -293,7 +293,7 @@ module Charcoal {
 
     proc init(msg: string, passed: bool, expected: [] int, actual: [] int) {
       super.init(msg=msg, passed=passed);
-      this.initDone();
+      this.complete();
       for e in expected {
         this.expected.push_back(e);
       }
@@ -321,7 +321,7 @@ module Charcoal {
 
       proc init(msg: string, passed: bool, expected: [] string, actual: [] string) {
         super.init(msg=msg, passed=passed);
-        this.initDone();
+        this.complete();
         for e in expected {
           this.expected.push_back(e);
         }
