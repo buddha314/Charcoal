@@ -1,0 +1,182 @@
+.. default-domain:: chpl
+
+.. module:: Charcoal
+   :synopsis: Documentation for Charcoal 
+
+Charcoal
+========
+**Usage**
+
+.. code-block:: chapel
+
+   use Charcoal;
+
+Documentation for Charcoal 
+
+.. class:: UnitTest
+
+   
+   Mean to mimic Python's Unittest, obviously
+   
+
+
+   .. attribute:: var s: int
+
+   .. attribute:: var f: int
+
+   .. attribute:: var t: int
+
+   .. attribute:: var verbose: bool = false
+
+   .. attribute:: var results: [1..0] TestResult
+
+   .. method:: proc setUp()
+
+   .. method:: proc tearDown()
+
+   .. method:: proc init(verbose: bool = false)
+
+   .. method:: proc report()
+
+   .. method:: proc run()
+
+   .. method:: proc assertIntEquals(msg: string, expected: int, actual: int): TestResult
+
+   .. method:: proc assertRealEquals(msg: string, expected: real, actual: real): TestResult
+
+   .. method:: proc assertRealApproximates(msg: string, expected: real, actual: real): TestResult
+
+   .. method:: proc assertArrayEquals(msg: string, expected: [] ?, actual: [] ?): TestResult
+
+   .. method:: proc assertIntArrayEquals(msg: string, expected: [] int, actual: [] int): TestResult
+
+   .. method:: proc assertThrowsError(msg: string, passed: bool = false, err: Error): TestResult
+
+   .. method:: proc assertBoolEquals(msg: string, expected: bool, actual: bool)
+
+   .. method:: proc assertStringEquals(msg: string, expected: string, actual: string)
+
+   .. method:: proc assertStringArrayEquals(msg: string, expected: [] string, actual: [] string): TestResult
+
+.. class:: TestResult
+
+   .. attribute:: var msg: string
+
+   .. attribute:: var passed: bool = false
+
+   .. method:: proc init()
+
+   .. method:: proc init(msg: string, passed: bool)
+
+   .. method:: proc report(): string
+
+   .. method:: proc writeThis()
+
+.. class:: TestErrorResult : TestResult
+
+   .. attribute:: var err: Error
+
+   .. method:: proc init(msg: string, passed: bool, err: Error)
+
+   .. method:: proc report()
+
+   .. method:: proc writeThis()
+
+.. class:: TestIntResult : TestResult
+
+   .. attribute:: var expected: int
+
+   .. attribute:: var actual: int
+
+   .. method:: proc init(msg: string, passed: bool, expected: int, actual: int)
+
+   .. method:: proc report(): string
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestBoolResult : TestResult
+
+   .. attribute:: var expected: bool
+
+   .. attribute:: var actual: bool
+
+   .. method:: proc init(msg: string, passed: bool, expected: bool, actual: bool)
+
+   .. method:: proc report(): string
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestRealResult : TestResult
+
+   .. attribute:: var expected: real
+
+   .. attribute:: var actual: real
+
+   .. method:: proc init(msg: string, passed: bool, expected: real, actual: real)
+
+   .. method:: proc report(): string
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestRealApproximatesResult : TestResult
+
+   .. attribute:: var expected: real
+
+   .. attribute:: var actual: real
+
+   .. attribute:: var delta: real
+
+   .. method:: proc init(msg: string, passed: bool, expected: real, actual: real, delta: real)
+
+   .. method:: proc report(): string
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestArrayResult : TestResult
+
+   .. attribute:: var expected: [1..0] real
+
+   .. attribute:: var actual: [1..0] real
+
+   .. method:: proc init(msg: string, passed: bool, expected: [] real, actual: [] real)
+
+   .. method:: proc report()
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestStringResult : TestResult
+
+   .. attribute:: var expected: string
+
+   .. attribute:: var actual: string
+
+   .. method:: proc init(msg: string, passed: bool, expected: string, actual: string)
+
+   .. method:: proc report(): string
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestIntArrayResult : TestResult
+
+   .. attribute:: var expected: [1..0] int
+
+   .. attribute:: var actual: [1..0] int
+
+   .. method:: proc init(msg: string, passed: bool, expected: [] int, actual: [] int)
+
+   .. method:: proc report()
+
+   .. method:: proc writeThis(): string
+
+.. class:: TestStringArrayResult : TestResult
+
+   .. attribute:: var expected: [1..0] string
+
+   .. attribute:: var actual: [1..0] string
+
+   .. method:: proc init(msg: string, passed: bool, expected: [] string, actual: [] string)
+
+   .. method:: proc report()
+
+   .. method:: proc writeThis(): string
+

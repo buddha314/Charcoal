@@ -1,0 +1,617 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Charcoal &mdash; chpldoc 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="chpldoc 0.0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="chpldoc documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> chpldoc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">chpldoc documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Charcoal</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">chpldoc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>Charcoal</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/modules/src/Charcoal.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-Charcoal"></span><div class="section" id="charcoal">
+<h1>Charcoal<a class="headerlink" href="#charcoal" title="Permalink to this headline">¶</a></h1>
+<p><strong>Usage</strong></p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">Charcoal</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Documentation for Charcoal</p>
+<dl class="class">
+<dt id="Charcoal.UnitTest">
+<em class="property">class </em><code class="descname">UnitTest</code><a class="headerlink" href="#Charcoal.UnitTest" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mean to mimic Python&#8217;s Unittest, obviously</p>
+<dl class="attribute">
+<dt id="Charcoal.UnitTest.s">
+<em class="property">var </em><code class="descname">s</code>: int<a class="headerlink" href="#Charcoal.UnitTest.s" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.UnitTest.f">
+<em class="property">var </em><code class="descname">f</code>: int<a class="headerlink" href="#Charcoal.UnitTest.f" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.UnitTest.t">
+<em class="property">var </em><code class="descname">t</code>: int<a class="headerlink" href="#Charcoal.UnitTest.t" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.UnitTest.verbose">
+<em class="property">var </em><code class="descname">verbose</code>: bool = false<a class="headerlink" href="#Charcoal.UnitTest.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.UnitTest.results">
+<em class="property">var </em><code class="descname">results</code>: [1..0] TestResult<a class="headerlink" href="#Charcoal.UnitTest.results" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.setUp">
+<em class="property">proc </em><code class="descname">setUp</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.setUp" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.tearDown">
+<em class="property">proc </em><code class="descname">tearDown</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.tearDown" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>verbose: bool = false</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.run">
+<em class="property">proc </em><code class="descname">run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.run" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertIntEquals">
+<em class="property">proc </em><code class="descname">assertIntEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: int</em>, <em>actual: int</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertIntEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertRealEquals">
+<em class="property">proc </em><code class="descname">assertRealEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: real</em>, <em>actual: real</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertRealEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertRealApproximates">
+<em class="property">proc </em><code class="descname">assertRealApproximates</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: real</em>, <em>actual: real</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertRealApproximates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertArrayEquals">
+<em class="property">proc </em><code class="descname">assertArrayEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: [] ?</em>, <em>actual: [] ?</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertArrayEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertIntArrayEquals">
+<em class="property">proc </em><code class="descname">assertIntArrayEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: [] int</em>, <em>actual: [] int</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertIntArrayEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertThrowsError">
+<em class="property">proc </em><code class="descname">assertThrowsError</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool = false</em>, <em>err: Error</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertThrowsError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertBoolEquals">
+<em class="property">proc </em><code class="descname">assertBoolEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: bool</em>, <em>actual: bool</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.assertBoolEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertStringEquals">
+<em class="property">proc </em><code class="descname">assertStringEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: string</em>, <em>actual: string</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.UnitTest.assertStringEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.UnitTest.assertStringArrayEquals">
+<em class="property">proc </em><code class="descname">assertStringArrayEquals</code><span class="sig-paren">(</span><em>msg: string</em>, <em>expected: [] string</em>, <em>actual: [] string</em><span class="sig-paren">)</span>: TestResult<a class="headerlink" href="#Charcoal.UnitTest.assertStringArrayEquals" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestResult">
+<em class="property">class </em><code class="descname">TestResult</code><a class="headerlink" href="#Charcoal.TestResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestResult.msg">
+<em class="property">var </em><code class="descname">msg</code>: string<a class="headerlink" href="#Charcoal.TestResult.msg" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestResult.passed">
+<em class="property">var </em><code class="descname">passed</code>: bool = false<a class="headerlink" href="#Charcoal.TestResult.passed" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt>
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestErrorResult">
+<em class="property">class </em><code class="descname">TestErrorResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestErrorResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestErrorResult.err">
+<em class="property">var </em><code class="descname">err</code>: Error<a class="headerlink" href="#Charcoal.TestErrorResult.err" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestErrorResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>err: Error</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestErrorResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestErrorResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestErrorResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestErrorResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestErrorResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestIntResult">
+<em class="property">class </em><code class="descname">TestIntResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestIntResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestIntResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: int<a class="headerlink" href="#Charcoal.TestIntResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestIntResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: int<a class="headerlink" href="#Charcoal.TestIntResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestIntResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: int</em>, <em>actual: int</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestIntResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestIntResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestIntResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestIntResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestIntResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestBoolResult">
+<em class="property">class </em><code class="descname">TestBoolResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestBoolResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestBoolResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: bool<a class="headerlink" href="#Charcoal.TestBoolResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestBoolResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: bool<a class="headerlink" href="#Charcoal.TestBoolResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestBoolResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: bool</em>, <em>actual: bool</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestBoolResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestBoolResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestBoolResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestBoolResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestBoolResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestRealResult">
+<em class="property">class </em><code class="descname">TestRealResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestRealResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestRealResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: real<a class="headerlink" href="#Charcoal.TestRealResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestRealResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: real<a class="headerlink" href="#Charcoal.TestRealResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestRealResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: real</em>, <em>actual: real</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestRealResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestRealResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestRealResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestRealResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestRealResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestRealApproximatesResult">
+<em class="property">class </em><code class="descname">TestRealApproximatesResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestRealApproximatesResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestRealApproximatesResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: real<a class="headerlink" href="#Charcoal.TestRealApproximatesResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestRealApproximatesResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: real<a class="headerlink" href="#Charcoal.TestRealApproximatesResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestRealApproximatesResult.delta">
+<em class="property">var </em><code class="descname">delta</code>: real<a class="headerlink" href="#Charcoal.TestRealApproximatesResult.delta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestRealApproximatesResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: real</em>, <em>actual: real</em>, <em>delta: real</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestRealApproximatesResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestRealApproximatesResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestRealApproximatesResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestRealApproximatesResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestRealApproximatesResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestArrayResult">
+<em class="property">class </em><code class="descname">TestArrayResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestArrayResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestArrayResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: [1..0] real<a class="headerlink" href="#Charcoal.TestArrayResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestArrayResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: [1..0] real<a class="headerlink" href="#Charcoal.TestArrayResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestArrayResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: [] real</em>, <em>actual: [] real</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestArrayResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestArrayResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestArrayResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestArrayResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestArrayResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestStringResult">
+<em class="property">class </em><code class="descname">TestStringResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestStringResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestStringResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: string<a class="headerlink" href="#Charcoal.TestStringResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestStringResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: string<a class="headerlink" href="#Charcoal.TestStringResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestStringResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: string</em>, <em>actual: string</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestStringResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestStringResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestStringResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestStringResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestStringResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestIntArrayResult">
+<em class="property">class </em><code class="descname">TestIntArrayResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestIntArrayResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestIntArrayResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: [1..0] int<a class="headerlink" href="#Charcoal.TestIntArrayResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestIntArrayResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: [1..0] int<a class="headerlink" href="#Charcoal.TestIntArrayResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestIntArrayResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: [] int</em>, <em>actual: [] int</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestIntArrayResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestIntArrayResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestIntArrayResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestIntArrayResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestIntArrayResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="Charcoal.TestStringArrayResult">
+<em class="property">class </em><code class="descname">TestStringArrayResult</code>: TestResult<a class="headerlink" href="#Charcoal.TestStringArrayResult" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="Charcoal.TestStringArrayResult.expected">
+<em class="property">var </em><code class="descname">expected</code>: [1..0] string<a class="headerlink" href="#Charcoal.TestStringArrayResult.expected" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="Charcoal.TestStringArrayResult.actual">
+<em class="property">var </em><code class="descname">actual</code>: [1..0] string<a class="headerlink" href="#Charcoal.TestStringArrayResult.actual" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestStringArrayResult.init">
+<em class="property">proc </em><code class="descname">init</code><span class="sig-paren">(</span><em>msg: string</em>, <em>passed: bool</em>, <em>expected: [] string</em>, <em>actual: [] string</em><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestStringArrayResult.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestStringArrayResult.report">
+<em class="property">proc </em><code class="descname">report</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Charcoal.TestStringArrayResult.report" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="Charcoal.TestStringArrayResult.writeThis">
+<em class="property">proc </em><code class="descname">writeThis</code><span class="sig-paren">(</span><span class="sig-paren">)</span>: string<a class="headerlink" href="#Charcoal.TestStringArrayResult.writeThis" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../index.html" class="btn btn-neutral" title="chpldoc documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+
+
+
+</body>
+</html>
