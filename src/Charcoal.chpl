@@ -2,6 +2,9 @@
 module Charcoal {
   use Reflection;
 
+  /*
+   Mean to mimic Python's Unittest, obviously
+   */
   class UnitTest {
 
     var s: int,   // Number of passing tests
