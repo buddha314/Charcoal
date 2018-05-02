@@ -58,9 +58,9 @@ module Charcoal {
       return r;
     }
 
-    proc assertRealApproximates(msg: string, expected: real, actual: real) : TestResult {
+    proc assertRealApproximates(msg: string, expected: real, actual: real, error:real = 1.0e-5) : TestResult {
       var d = abs(expected - actual);
-      var b:bool = (d < 1.0e-5);
+      var b:bool = (d < error);
       const r = new TestRealApproximatesResult(msg=msg, passed=b, expected=expected
         , actual=actual, delta=d);
       this.results.push_back(r);
